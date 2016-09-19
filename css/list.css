@@ -1,0 +1,34 @@
+.list{
+    color:aqua !important;
+}
+
+.pointer:hover {
+      cursor: pointer !important; }
+
+@media (min-width: 767px) {
+  .navbar-fixed-left+.main {
+    margin-left: 200px;
+  }
+  .navbar-fixed-left.navbar-condensed+.main {
+    margin-left: 100px;
+  }
+
+  .navbar ul.nav.navbar-nav li > a > .icon.icon-svg {
+    width: 18px;
+    height: 23px;
+    margin-right: 8px;
+  }
+  .navbar-condensed.navbar ul.nav.navbar-nav li > a > .icon.icon-svg {
+    margin-right: 0;
+    width: 32px;
+    height: 40px;
+  }
+  .navbar .icon svg g * {
+    stroke: #1eabf4;
+    fill: none;
+  }
+}
+
+.main {
+  padding: 20px 40px;
+}

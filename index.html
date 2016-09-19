@@ -1,0 +1,128 @@
+<html>
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="js/angular-pageslide-directive.js"></script>
+  <script src="js/script.js"></script>
+    
+  <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc.5/angular-material.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/1.6.50/css/materialdesignicons.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+  <link href="css/menu.css">
+     <style>
+         .menu{
+             transition: 0.2s;
+             cursor:pointer;
+             -webkit-user-select: none; /* Chrome/Safari */        
+             -moz-user-select: none; /* Firefox */
+             -ms-user-select: none; /* IE10+ */
+
+         }
+    .menu:hover{
+        border-left: 5px solid #0099ff !important;
+         }
+    </style>
+  
+</head>
+<body ng-app="dashApp" class="text-center " >
+<div ng-controller="dashCtrl" style="background-color:#e0ebeb" >
+  <main flex class="container">
+  
+  </main>
+    
+    
+     <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools" >
+          <md-button class="md-icon-button" ng-click="toggleLeft()" >
+                <img src="img/icon/menu.svg" style="margin:-14px -5px 0px -15px"/>
+            <!--<md-icon md-svg-icon="img/icon/menu.svg"></md-icon>-->
+          </md-button>
+          <div flex></div>
+          <md-button class="md-icon-button">
+              <i class="material-icons" >face</i>
+              <md-tooltip style="margin-top:5px" md-direction="bottom">User</md-tooltip>
+          </md-button>
+          <!--<div flex></div>-->
+         <md-button class="md-icon-button">
+             <i class="material-icons" >power_settings_new</i><br>
+             <md-tooltip style="margin-top:5px" md-direction="bottom">Logout</md-tooltip>
+          </md-button>
+      </div>
+    </md-toolbar>
+    
+    <!--<md-content flex>
+        <md-sidenav class="md-sidenav-left" md-component-id="left"
+                md-disable-backdrop md-whiteframe="4">
+
+     
+
+      <md-content layout-margin>
+        <p>
+          This sidenav is not showing any backdrop, where users can click on it, to close the sidenav.
+        </p>
+        
+      </md-content>
+
+    </md-sidenav>
+
+    </md-content>-->
+    
+    <div >
+    <md-content flex style="height:100%"> 
+    <md-sidenav style="width: 200px;" md-component-id="left"  class="md-sidenav-left md-whiteframe-z1 " layout="column" md-disable-backdrop>
+        <md-content>
+        <md-list>
+         
+            <table style="width:200px">
+            <td class="menu"><md-list-item md-ink-ripple >
+                <!--<md-button md-ink-ripple >-->  <!--<md-item-content md-ink-ripple >-->
+                    <i class="material-icons">apps</i><div style="margin-left:15px">Dashboard</div>
+                <!--</md-button> --> 
+                
+            </md-list-item ></td></table>
+            <hr style="width: 95%;border-bottom: 0.2px think #f2f2f2;margin-top:0px;margin-bottom:0px">
+            <table style="width:200px">
+            <td class="menu">
+            <md-list-item md-ink-ripple>
+                <!--<md-button md-ink-ripple >-->  <!--<md-item-content md-ink-ripple >-->
+                    <i class="material-icons">domain</i><div style="margin-left:15px">Hotels</div>
+                <!--</md-button> --> 
+                
+                </md-list-item ></td></table>
+            <hr style="width: 95%;border-bottom: 0.5px think #f2f2f2;margin-top:0px;margin-bottom:0px">
+            
+        </md-list>
+            </md-content>
+    </md-sidenav>
+
+    <md-content >
+    
+
+<div layout="row" layout-padding style="margin-left:200px;">
+
+  <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+    <span>Dashboard</span>
+    </md-whiteframe>
+        </div>    
+    </md-content>
+</md-content>
+    </div>
+    
+    
+    
+    
+</div>
+    
+    
+        
+</body>
+</html>
