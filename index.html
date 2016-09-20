@@ -1,4 +1,4 @@
-<html>
+<html ng-app="dashApp">
 <head>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
@@ -17,6 +17,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.materialdesignicons.com/1.6.50/css/materialdesignicons.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+  <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
   <link href="css/menu.css">
      <style>
          .menu{
@@ -30,11 +31,31 @@
     .menu:hover{
         border-left: 5px solid #0099ff !important;
          }
+         
+         .iconNav{
+             width: 60px;
+             transition: width 0.8s;
+         } 
+         
+         .textNav{
+             width: 200px;
+            transition: width 0.8s;
+         } 
+         
+         .iconContent{
+             margin-left:60px;
+             transition: width 1s;
+         }
+         
+         .textContent{
+             margin-left:200px;
+             transition: width 1s;
+         }
     </style>
   
 </head>
-<body ng-app="dashApp" class="text-center " >
-<div ng-controller="dashCtrl" style="background-color:#e0ebeb" >
+<body  ng-controller="dashCtrl" class="text-center " style="font-family: 'Product Sans', Arial, sans-serif;">
+<div  style="background-color:#e0ebeb"  >
   <main flex class="container">
   
   </main>
@@ -78,18 +99,21 @@
     
     <div >
     <md-content flex style="height:100%"> 
-    <md-sidenav style="width: 200px;" md-component-id="left"  class="md-sidenav-left md-whiteframe-z1 " layout="column" md-disable-backdrop>
-        <md-content>
+    <md-sidenav id="sideNav" md-component-id="left"  class="md-sidenav-left md-whiteframe-z1 md-locked-open iconNav" layout="column" md-disable-backdrop >
+        <md-content style="overflow-x: hidden;">
+            <div  ng-hide="is_open">
         <md-list>
          
             <table style="width:200px">
             <td class="menu"><md-list-item md-ink-ripple >
                 <!--<md-button md-ink-ripple >-->  <!--<md-item-content md-ink-ripple >-->
-                    <i class="material-icons">apps</i><div style="margin-left:15px">Dashboard</div>
+                    <i class="material-icons">dashboard</i><div style="margin-left:15px">Dashboard</div>
                 <!--</md-button> --> 
                 
             </md-list-item ></td></table>
             <hr style="width: 95%;border-bottom: 0.2px think #f2f2f2;margin-top:0px;margin-bottom:0px">
+            
+            
             <table style="width:200px">
             <td class="menu">
             <md-list-item md-ink-ripple>
@@ -100,18 +124,98 @@
                 </md-list-item ></td></table>
             <hr style="width: 95%;border-bottom: 0.5px think #f2f2f2;margin-top:0px;margin-bottom:0px">
             
+            
+            <table style="width:200px">
+            <td class="menu">
+            <md-list-item md-ink-ripple>
+                <!--<md-button md-ink-ripple >-->  <!--<md-item-content md-ink-ripple >-->
+                    <i class="material-icons">vpn_key</i><div style="margin-left:15px">Rooms</div>
+                <!--</md-button> --> 
+                
+                
+                
+                
+                
+            </md-list-item ></td></table>
+            <hr style="width: 95%;border-bottom: 0.5px think #f2f2f2;margin-top:0px;margin-bottom:0px">
         </md-list>
+            
+            </div>
+            
+            <div  ng-show="is_open">
+            <md-list>
+         
+            <table style="width:60px">
+            <td class="menu"><md-list-item md-ink-ripple >
+                <!--<md-button md-ink-ripple >-->  <!--<md-item-content md-ink-ripple >-->
+                    <i class="material-icons">dashboard</i>
+                <!--</md-button> --> 
+                
+            </md-list-item ></td></table>
+            <hr style="width: 95%;border-bottom: 0.2px think #f2f2f2;margin-top:0px;margin-bottom:0px">
+            
+            
+            <table style="width:60px">
+            <td class="menu">
+            <md-list-item md-ink-ripple>
+                <!--<md-button md-ink-ripple >-->  <!--<md-item-content md-ink-ripple >-->
+                    <i class="material-icons">domain</i>
+                <!--</md-button> --> 
+                
+                </md-list-item ></td></table>
+            <hr style="width: 95%;border-bottom: 0.5px think #f2f2f2;margin-top:0px;margin-bottom:0px">
+            
+            
+            <table style="width:60px">
+            <td class="menu">
+            <md-list-item md-ink-ripple>
+                <!--<md-button md-ink-ripple >-->  <!--<md-item-content md-ink-ripple >-->
+                    <i class="material-icons">vpn_key</i>
+                <!--</md-button> --> 
+                
+            </md-list-item ></td></table>
+            <hr style="width: 95%;border-bottom: 0.5px think #f2f2f2;margin-top:0px;margin-bottom:0px">
+                
+                <md-list-item class="md-3-line" ng-repeat="training in vm.trainingList">
+                    <div class="md-list-item-text" ng-click="$state.go('more_link'})">
+                        <h3 class="md-subtitle">{{title}}</h3>
+                        <h4>{{description}}</h4>
+                        <p class="md-body-1">
+                            {{more_info}}
+                        </p>
+                    </div>
+                    <md-menu md-position-mode="target-right target">
+                        <md-button class="md-icon-button" >
+                            <md-icon md-menu-origin>more_vert</md-icon>
+                        </md-button>
+                        <md-menu-content width="3">
+                            <md-menu-item>
+                                <md-button ng-click="">
+                                    <p>copy</p>
+                                    <md-icon md-menu-align-target>content_copy</md-icon>
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                                <md-button ng-click="">
+                                    <p>delete</p>
+                                    <md-icon md-menu-align-target>clear</md-icon>
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </md-list-item>
+        </md-list>
+                </div>
             </md-content>
     </md-sidenav>
 
     <md-content >
     
 
-<div layout="row" layout-padding style="margin-left:200px;">
-
-  <md-whiteframe class="md-whiteframe-1dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
-    <span>Dashboard</span>
-    </md-whiteframe>
+<div id="content" layout="row" layout-padding class="iconContent" ng-include="'views/room.html'">
+    
+  
         </div>    
     </md-content>
 </md-content>
