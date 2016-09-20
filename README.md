@@ -1,1 +1,1 @@
-# dashboard
+# Angular Material Dashboard
