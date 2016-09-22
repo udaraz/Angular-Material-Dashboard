@@ -1,29 +1,102 @@
 <div class="row">
     <div class="col-md-12">
-        <md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center" style="background-color:white;width:100%;border-bottom:5px solid #0099ff;margin-top:-15px" >
-        <h3>HEADING SECTION</h3>
+        <md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center" style="background-color:white;width:100%;border-bottom:5px solid #02a8f3;margin-top:-15px" >
+            <h3  style="margin-left:1%">HEADING SECTION</h3>
+          
         </md-whiteframe>
+        
     
-    </div>
+    
+     
+        
+        
+  </div>
+    
+   
 </div>
 
 <div class="row">
 <div class="col-md-8">
-    <md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center" style="background-color:white;width:100%" >
-        <div layout="column" flex>
-            <div flex>
-            <md-toolbar   style="min-height:30px !important;background-color:#0099ff">
-                <h5 > SUB HEADER </h5>
-            </md-toolbar>
-            </div>
-        <div flex>
-        <form name="projectForm" layout-align="start">
-               <md-input-container class="md-block" style="width:400px;align-text:left">
-                  <label >Room No</label>
-                  <input required name="roomNo" ng-model="project.userName">
+    <md-card style="height:45px;margin:0 0 15px 0 ">
+            <div layout="row">
+                <div  layout="row" layout-align="left top">
+          
+          
+                  <md-button  class="md-icon-button md-primary"  >
+                      <i class="material-icons" >save</i>
+                      <md-tooltip  md-direction="bottom">Save</md-tooltip>
+                  </md-button>
+                        
+                 <md-button class="md-icon-button md-primary" >
+                     <i class="material-icons" >edit</i><br>
+                     <md-tooltip md-direction="bottom">Edit</md-tooltip>
+                  </md-button>
+                        
+                 <md-button class="md-icon-button md-primary" >
+                     <i class="material-icons" >autorenew</i><br>
+                     <md-tooltip md-direction="bottom">Reset</md-tooltip>
+                  </md-button>
+                      
+                    
+                </div>
+            <div flex></div>
+            
+                  
+                <md-input-container class="md-block" style="width:30%;margin-left:2px;margin-top:0;margin-right:2%">
+                  <input name="roomNo" ng-model="search">
+                <!--<div class="hint" >search by Room No</div>-->
+                   <md-icon class="name"><i class="material-icons">search</i></md-icon>
+                 
                   
                </md-input-container>
-               
+            
+                
+            
+        </div>
+    </md-card>
+    
+    <md-whiteframe class="md-whiteframe-1dp"  layout layout-align="center center" style="background-color:white;width:100%" >
+        <div layout="column" flex>
+            <!--<div flex>
+            <md-toolbar style="min-height:30px !important;background-color:#1565c0" class="text-center">
+                <h5 > SUB HEADER 1 </h5>
+            </md-toolbar>
+            </div>-->
+        <div flex>
+        <form name="projectForm" layout-align="start">
+            <div layout-gt-sm="row">   
+            <md-input-container class="md-block" style="width:30%;margin-left:2%">
+                  <label >Number</label>
+                   <md-icon class="name"><i class="material-icons">tab</i></md-icon>
+                  <input required name="roomNo" ng-model="number">
+                  
+               </md-input-container>
+            
+                <div flex="5" hide-xs hide-sm>
+                    <!-- Spacer //-->
+                </div>
+            
+               <md-input-container class="md-block" style="width:40%;margin-left:2%">
+                  <label >Price</label>
+                   <md-icon class="name"><i class="material-icons">attach_money</i></md-icon>
+                  <input required name="roomNo" ng-model="coast" type="integer">
+                  
+               </md-input-container>
+                
+                <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink" ng-model="data.cb5" style="margin-left:5%">
+                    Avaliable
+                </md-switch>
+            </div>
+            
+            <div layout-gt-sm="row">   
+                    
+               <md-input-container class="md-block" style="width:93%;margin-left:2%">
+                  <label >Description</label>
+                   <md-icon class="name"><i class="material-icons">description</i></md-icon>
+                   <textarea md-maxlength="300" required name="roomNo" ng-model="description"></textarea>
+                  
+               </md-input-container>
+            </div>
      
                
         </form>
@@ -32,22 +105,70 @@
     </md-whiteframe>
 </div>
 <div class="col-md-4">
+    
+    
+    
     <md-whiteframe class="md-whiteframe-1dp" flex-sm="100" flex-gt-sm="100" flex-gt-md="100" layout layout-align="center center" style="background-color:white;" >
         
      <!--<md-button name="User name" class="md-raised md-primary">Pool</md-button>-->
     <div layout="column" flex>
         
         <div flex>
-            <md-toolbar   style="min-height:30px !important;background-color:#0099ff">
-                <h5 > SUB HEADER </h5>
+            <md-toolbar   style="min-height:30px !important;background-color:#1565c0" class="text-center">
+                <h5 > SUB HEADER 1 </h5>
             </md-toolbar>
             </div>
         <div flex>
-        <md-button-group class=" ">
-            <md-button class="md-raised md-primary">POOL</md-button>
-            <md-button><i class="material-icons">add</i></md-button>
             
-        </md-button-group>
+            <md-card class="card-1">
+            <md-card-actions layout="row" layout-align="start center">
+                <md-card-icon-actions>
+                    <h4>TODO ONE</h4>
+            
+                </md-card-icon-actions>
+          
+                <md-card-actions layout="row" layout-align="end center" >
+                  <md-button class="md-fab md-primary md-hue-2 md-mini" aria-label="Add" >
+                    <md-icon ><i class="material-icons" >add</i></md-icon>
+                  </md-button>
+                </md-card-actions>
+             
+            </md-card-actions>
+            </md-card>
+            
+            
+            <md-card class="card-1">
+            <md-card-actions layout="row" layout-align="start center">
+                <md-card-icon-actions>
+                    <h4>TODO TWO</h4>
+            
+                </md-card-icon-actions>
+          
+                <md-card-actions layout="row" layout-align="end center" >
+                  <md-button class="md-fab md-primary md-hue-2 md-mini" aria-label="Add" >
+                    <md-icon ><i class="material-icons" >add</i></md-icon>
+                  </md-button>
+                </md-card-actions>
+             
+            </md-card-actions>
+            </md-card>
+            
+            <md-card class="card-1">
+            <md-card-actions layout="row" layout-align="start center">
+                <md-card-icon-actions>
+                    <h4>TODO THREE</h4>
+            
+                </md-card-icon-actions>
+          
+                <md-card-actions layout="row" layout-align="end center" >
+                  <md-button class="md-fab md-primary md-hue-2 md-mini" aria-label="Add" >
+                    <md-icon ><i class="material-icons" >add</i></md-icon>
+                  </md-button>
+                </md-card-actions>
+             
+            </md-card-actions>
+            </md-card>
+        
         </div>    
         </div>
     </md-whiteframe>
@@ -64,36 +185,4 @@
 
 
 
-<!--
-<md-whiteframe class="md-whiteframe-1dp" flex-sm="100" flex-gt-sm="100" flex-gt-md="100" layout layout-align="center center" style="background-color:white;" >
-    
-      
-      <div class="row" style="margin-left:20px">
 
-    
-<div class="row" >
-    
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary active">
-    <input type="radio" name="options" id="option1" autocomplete="off" checked> ADD ROOM
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> UPDATE ROOM
-  </label>
-  
-</div>
-
-
-    <div class="col-md-6">dda</div>
-    <div class="col-md-6">dd</div>
-    
-</div>
-    
-   
- 
-
-</div>
-     
-    </md-whiteframe>
-
--->
